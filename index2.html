@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+
+<body>
+    <div ng-controller="Aaa">
+        {{greeting}}
+    </div>
+
+    <script src="angular.js"></script>
+    <script>
+        var m1 = angular.module('myApp', []);
+        m1.controller('Aaa', function ($scope) {
+            $scope.greeting = 'Welcome!';
+        });
+        angular.bootstrap(document, ['myApp']);
+    </script>
+</body>
+
+</html>

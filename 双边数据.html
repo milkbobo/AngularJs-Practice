@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html ng-app>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <script src="angular2.min.js"></script>
+    <script>
+        function Aaa($scope, $rootScope) {
+            $scope.name = 'hello angular';
+//            $scope.age = '20';
+//            $rootScope.age = '40';
+//           $timeout(function(){
+//               $scope.name='hi';
+//           },2000);
+            $scope.show=function(){
+                $scope.name='hi';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+       <input type="text" ng-model="name">
+        <div>{{name}}
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

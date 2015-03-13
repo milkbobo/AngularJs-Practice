@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+
+<body>
+    <div ng-controller="Aaa">
+        {{greeting}}
+    </div>
+
+    <script src="angular.js"></script>
+    <script>
+        //angular.copy(); //拷贝对象
+        var a={name:'hello'};
+        var b={age:'20'};
+        //var c=angular.copy(b);
+        var c=angular.copy(a,b);//a把所有值覆盖了b，可以理解为a覆盖到b和c上。
+        console.log(b);
+    </script>
+</body>
+
+</html>

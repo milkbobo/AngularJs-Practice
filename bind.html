@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<body>
+    <div ng-controller="Aaa">
+        {{greeting}}
+    </div>
+
+    <script src="angular.js"></script>
+    <script>
+     //angular.bind(); --jq--> $.proxy  :改this指向
+        function show(n1,n2){
+            alert(n1);
+            alert(n2);
+            alert(this);
+        }
+        angular.bind(document,show)(3,4);
+        //angular.bind(document,show,3,4)();
+        //angular.bind(document,show,4)(3);
+    </script>
+</body>
+
+</html>
