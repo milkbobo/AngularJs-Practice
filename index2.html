@@ -1,5 +1,7 @@
 <!doctype html>
+<!--<html ng-app='myApp'> 自动初始化，不用bootstrap-->
 <html>
+
 
 <body>
     <div ng-controller="Aaa">
@@ -12,7 +14,7 @@
         m1.controller('Aaa', function ($scope) {
             $scope.greeting = 'Welcome!';
         });
-        angular.bootstrap(document, ['myApp']);
+        angular.bootstrap(document, ['myApp']);//手动初始化模板，可以指定事件才启动，例如点击事件才启动。
     </script>
 </body>
 

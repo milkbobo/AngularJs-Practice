@@ -1,5 +1,7 @@
 <!doctype html>
+<!--<html ng-app='myApp'> 自动初始化，不用bootstrap-->
 <html>
+
 
 <body>
     <div ng-controller="Aaa">
@@ -8,13 +10,20 @@
 
     <script src="angular.js"></script>
     <script>
-        //angular.extend(); //对象继承
-        var a={name:'hello'};
-        var b={age:'20'};
-        //var c=angular.copy(b);
-        var c=angular.extend(a,b);//a+b的内容
-        console.log(c);
+        var m1 = angular.module('myApp', []);
+        m1.controller('Aaa', function ($scope) {
+            $scope.greeting = 'Welcome!';
+          
+setTimeout(function(){
+    $scope.$apply(function(){
+        $scope.name='hi';
+    })
+},2000);
+      
+        });
+        angular.bootstrap(document, ['myApp']);//手动初始化模板，可以指定事件才启动，例如点击事件才启动。
     </script>
+   
 </body>
 
 </html>

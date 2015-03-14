@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<!--<html ng-app='myApp'> 自动初始化，不用bootstrap-->
 
 <body>
     <div ng-controller="Aaa">
@@ -9,11 +10,25 @@
     <script src="angular.js"></script>
     <script>
         var m1 = angular.module('myApp', []);
+        m1.controller('Aaa', function ($scope) {
+            $scope.greeting = 'Welcome!';
+        });
+        angular.bootstrap(document, ['myApp']);//手动初始化模板，可以指定事件才启动，例如点击事件才启动。
+    </script>
+</body>
+
+</html>
+<!--
+angularjs写在网页最低，写好module和controller后， 用angular.bootstrap实现modue。
+但是自动初始化，不能超过两个ng-app，只会默认第初始化第一个ng-app，这时候只能手动初始化了。
+第一参数，你要初始化在那个地方（class，id）.
+第二参数，你要初始化的module的名字
+-->
+    <script>
+        var m1 = angular.module('myApp', []);
         m1.controller('Aaa', ['$scope',function ($scope) {
             $scope.greeting = 'Welcome!';
         }]);
         angular.bootstrap(document, ['myApp']);
     </script>
-</body>
-
-</html>
+<!--写成数组方式，防止压缩工具而使$scope失效。-->
