@@ -13,9 +13,19 @@
         var m1 = angular.module('myApp', []);
         m1.controller('Aaa', function ($scope) {
             $scope.name = 'Welcome!';
+
+            setTimeout(function () {
+                
+                $scope.$apply(function () {
+                    $scope.name = 'hi';
+                })
+                
+            }, 2000);
+
         });
-        angular.bootstrap(document, ['myApp']);//手动初始化模板，可以指定事件才启动，例如点击事件才启动。
+        angular.bootstrap(document, ['myApp']); //手动初始化模板，可以指定事件才启动，例如点击事件才启动。
     </script>
+
 </body>
 
 </html>
